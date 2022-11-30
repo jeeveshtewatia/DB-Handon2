@@ -42,10 +42,9 @@ async function main() {
     { salary: { $gt: "70000" } },
     { $set: { salary: "65000" } }
   );
+
+  //Delete all the documents from "employee" where last company is Y.
+
+  const delt = db.collection.deleteMany({ lastCompany: "Y" });
 }
-
-//Delete all the documents from "employee" where last company is Y.
-
-const delt = db.collection.deleteMany({ lastCompany: "Y" });
-
 main();
